@@ -20,7 +20,10 @@ a{
 }
 
 #texto{
+	font-size: 18px;
 	text-align: justify;
+	width: 800px;
+	overflow: auto;
 }
 .capital {
 	font-size: 4em;
