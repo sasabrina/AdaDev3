@@ -22,3 +22,6 @@ a{
 #texto{
 	text-align: justify;
 }
+.capital {
+	font-size: 4em;
+}
