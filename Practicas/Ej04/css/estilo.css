@@ -7,33 +7,51 @@
 h1{
 	color: #FFFFFF;
 	display: inline-block;
-	
-}
-header img {
 	vertical-align: middle;
-	padding-left: 15%;
-	padding-right: 15%;
+	text-align: center;
 }
 
+
 header{
-	vertical-align: middle;
-	background: #000000;
+	height: 7em;
 	text-align: center;
+	background: #000000;
+	padding: auto;
+}
+
+header img {
+	width: 100px;
+	height: 100px;
 	margin: auto;
 }
 
+#perrouno {
+	float: left;
+	display: inline-block;
+}
+
+#perrodos {
+	float: right;
+	display: inline-block;
+}
+
+a{
+	color: white;
+	text-decoration: none;
+}
 nav ul{
 	text-align: center;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	padding-left: auto;
 	padding-right: auto;
 }
 
 nav ul li {
-	background: #FF8000;
+	background: #000000;
+	padding: 5px;
 	font-family: arial;
-	margin: 1%;
+	margin: 2%;
 	list-style-type: none;
 	display: inline-block;
 }
@@ -42,34 +60,79 @@ nav ul li {
     margin: 0 auto;
 	background: #FA5858;
 	width: 49%;
-	height: 500px;
+	height: 400px;
 	display: inline-block;
 	text-align: center;
 }
 
 .azul{
-	margin: auto;
+	
 	background: #2E64FE;
-	text-align: right;
+	height: 140px;
 }
 
-.azul img {
-	vertical-align: middle;
-	text-align: right;
-	padding: 2px;
-
+#perroazul {
+	float: right;
+    margin: auto;
 }
 
 .verde article{
 	margin: 0 auto;
 	background: #31B404;
 	width: 33%;
-	height: 500px;
+	height: 400px;
 	display: inline-block;
 	text-align: center;
 }
 
 footer{
 	background: #FFFF00;
-	height: 150px;
+	height: 7em;
+	padding: auto;
+}
+
+#gmaps {
+	float: left;
+	margin: auto;
+}
+
+@media all and (max-width: 480px) {
+	h1 {
+		margin: 10px;
+	}
+
+	header #perrodos {
+		display: none;
+	}
+
+	nav {
+		text-align: right;
+		position: fixed;
+		top: 20%;
+		right: 0;
+	}
+
+	nav ul li {
+		display: block;
+		margin: 0;
+	}
+
+	section {
+		margin: 10px;
+	}
+
+	.rosa article {
+		width: 100%;
+		display: block;
+	}
+
+	.verde {
+		display: none;
+	}
+
+	.azul #perroazul{
+		display: none;
+	}
+
+	footer {}
 }
