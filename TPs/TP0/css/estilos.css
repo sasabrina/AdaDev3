@@ -1,0 +1,39 @@
+* {
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 2em;
+	background: #fbf4f4;
+}
+.container {
+	margin: 2px;
+	width:  90%;
+	display: inline-block;
+}
+header img {
+	width: 100%;
+}
+.mail{
+	text-align: center;
+}
+.mail, .social {
+	margin-top:  2em;
+}
+#dejanos, #datos {
+	display: inline-block;
+	font-family: arial;
+}
+#social1, #social2, #social3 {
+	display: inline-block;
+	background: #DD9999;
+	width: 36px;
+	height: 36px;
+	float: right;
+	margin-left: 2px;
+}
+section img {
+	margin-left: 2px;
+	margin-top: 2px;
+}
