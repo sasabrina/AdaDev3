@@ -47,3 +47,16 @@ footer {
 	margin-bottom: 10px;
 	background: gray;
 }
+
+@media all and (max-width: 480px) {
+	.container {
+		width: 70%;
+	}
+	nav {
+		position: fixed;
+		width: 70px;
+		top: 10%;
+		right: 0;
+		background: black;
+	}
+}
