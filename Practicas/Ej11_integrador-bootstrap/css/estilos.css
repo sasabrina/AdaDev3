@@ -1,0 +1,98 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.container {}
+
+.uno .col {
+	height: 400px;
+}
+
+.dos .col {
+	height: 35px;
+}
+
+.tres .col {
+	height: 50px;
+}
+
+.cuatro .col{
+	height: 50px;
+}
+
+.blanco {
+	background: white;
+}
+
+.amarillo {
+	background: yellow;
+}
+
+.cyan {
+	background: cyan;
+}
+
+.verde {
+	background: lime;
+}
+
+.magenta {
+	background: magenta;
+}
+
+.rojo {
+	background: red;
+}
+
+.azul {
+	background: blue;
+}
+
+.negro {
+	background: black;
+}
+
+.gradient1 {
+	background: -webkit-linear-gradient(left, rgba(148,148,148,1) 0%, rgba(148,148,148,1) 34%, rgba(130,130,130,1) 38%, rgba(105,105,105,1) 48%, rgba(64,64,64,1) 57%, rgba(64,64,64,1) 60%, rgba(41,41,41,1) 68%, rgba(26,26,26,1) 76%, rgba(0,0,0,1) 99%, rgba(26,26,26,1) 100%);
+}
+
+.gradient2 {
+	background: -webkit-linear-gradient(left, rgba(148,148,148,1) 0%, rgba(148,148,148,1) 34%, rgba(130,130,130,1) 38%, rgba(105,105,105,1) 48%, rgba(64,64,64,1) 57%, rgba(64,64,64,1) 60%, rgba(41,41,41,1) 68%, rgba(26,26,26,1) 76%, rgba(0,0,0,1) 99%, rgba(26,26,26,1) 100%);
+}
+
+.gris {
+	background: #151515;
+}
+
+.gris1 {
+	background: #2E2E2E;
+}
+
+.gris2 {
+	background: #585858;
+}
+
+.gris3 {
+	background: #6E6E6E;
+}
+
+.gris4{
+	background: #848484;
+}
+
+.gris5 {
+	background: #A4A4A4;
+}
+
+.gris6 {
+	background: #BDBDBD;
+}
+
+.gris7 {
+	background: #D8D8D8;
+}
+
+.gris8 {
+	background: #E6E6E6;
+}

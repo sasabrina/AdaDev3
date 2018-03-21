@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+.container {
+
+}
+
+.col-md-4 {
+	width: 264px;
+	height: 264px;
+	margin: 2px;
+}
+
+.rosa {
+	background: pink;
+}
+
+.gris {
+	background: gray;
+}
+
+.gris img {
+	margin-left: -12px;
+	margin-top: 4px;
+}
