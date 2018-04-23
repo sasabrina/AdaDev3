@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Challenge II</title>
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+	<div id="header"></div>
+	<div id="container">
+		
+			<div>
+				<label>Nombre:</label>
+				<input type="text" name="nombre" class="obligatorio"> *
+				<label class="error obLabel"></label>
+			</div>
+			
+			<div>
+				<label>Apellido:</label>
+				<input type="text" name="apellido" class="obligatorio"> *
+				<label class="error obLabel"></label>
+			</div>
+			
+			<div>
+				<label>Nacionalidad:</label>
+				<select id="paises" name="select" class="obligatorio"> *
+					<option value="-1">Seleccione una Opción</option>	
+				</select>
+				<label class="error obLabel"></label>
+			</div>
+			
+			<div>
+				<label>Fecha de Nacimiento:</label>
+				<input type="date" id="nacimiento" class="obligatorio"> *
+				<label class="error obLabel"></label>
+			</div>
+
+			<div id="doc">
+				<div>
+					<label>Tipo de Documento:</label>
+					<select name="select" id="tipoDoc"> *
+						<option value="" disabled="" selected="">Seleccione una Opción</option>	
+					</select>
+					<label class="error obLabel"></label>
+				</div>
+				<div>
+					<label>Número de Documento:</label> 
+					<input type="text" name="nroDoc" id="nroDoc"><span>*</span>
+					<label class="error docInvalido"></label>
+				</div>
+			</div>
+			<div>
+				<label>Calle: </label>
+				<input type="text" name="calle" class="obligatorio"> *
+				<label class="error obLabel"></label>
+			</div>
+			
+			<div id="direccion">
+				<label>Número:</label>
+				<input type="text" name="numero">
+
+				<label>Piso:</label>
+				<input type="text" name="piso">
+
+				<label>Depto:</label>
+				<input type="text" name="depto">
+			</div>
+			
+			<div>
+				<label>Provincia:</label>
+				<select name="select" id="pcias"> 
+					<option value="-1">Seleccione una Opción</option>					
+				</select>
+			</div>
+			
+			<div>
+				<label>Ciudad:</label>
+				<select name="select" id="city">
+					<option value="-1">Seleccione una Opción</option>
+				</select>
+			</div>
+		
+			<div id="genero">
+				<label>Genero *</label>
+				<input type="radio" name="genero" value="F"><span>Femenino</span>
+				<input type="radio" name="genero" value="M"><span>Masculino</span>
+				<input type="radio" name="genero" value="O"><span>Otro</span>
+			</div>
+
+			<div class="deporte">
+				<label>Deporte</label>
+				<input type="checkbox" id="cbox1" value="opcion1">Opción 1
+				<input type="checkbox" id="cbox2" value="opcion2">Opción 2
+				<input type="checkbox" id="cbox3" value="opcion3">Opción 1
+			</div>
+			
+			<div id="alturaypeso">
+				<label>Altura:</label>
+				<input type="text" name="altura">
+
+				<label>Peso:</label>
+				<input type="text" name="peso">
+			</div>
+			<div>
+				<label>Teléfono:</label>
+				<input type="text" name="telefono">
+			</div>
+			
+			<div>
+				<label>Email *</label>
+				<input type="text" name="email" id="mail" class="obligatorio">
+				<label class="error obLabel" id="emailError"></label>
+			</div>
+			
+			<div>
+				<label>Observaciones:</label>
+				<br>
+				<textarea name="observaciones"></textarea>
+			</div>
+			
+			<div id="btn">
+				<button id="enviar">Enviar</button>
+				<button id="limpiar">Limpiar</button>
+			</div>
+		</div>
+	
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
