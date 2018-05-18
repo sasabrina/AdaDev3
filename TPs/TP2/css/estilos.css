@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f1ece9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#contenedor{
+    width: 90%;
+    margin: auto;
+    display: flex;
+}
+#izquierda{
+    width: 45%;
+}
+h1{
+    font-size: 55px;
+    color: #b51f21;
+    font-family: 'Noto Serif', serif;
+}
+#instrucciones{
+    margin-top: 20px;
+}
+h2{
+    font-size: 30px;
+    color: #2b060d
+}
+#izquierda{
+    width: 50%; 
+    height: 100%;;
+}
+.tablero{
+    display: flex;
+    justify-content: space-between;
+    background-size: contain;
+}
+.back{
+    width: 150px;
+    height: 150px;
+    margin: 3px;
+    background-image: url(../imgs/back.jpg);
+}
+.visible{
+    opacity: 1;
+}
+.invisible{
+    opacity: 0;
+}
+.noPointer{
+    pointer-events: none;
+}

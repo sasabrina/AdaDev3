@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+    <title>Cumpleaños</title>
+</head>
+<body>
+    <div id="contenedor">
+        <nav id="nav-i">
+            <div id="titulo">
+                <h1>CUMPLES</h1>
+            </div>
+            <div id="home">
+                <a href="home.html" target="blank">HOME</a>
+            </div>
+        </nav>
+        <form>
+            <section id="guardar">
+                <div>
+                    <input type="text" placeholder="Nombre" id="nombre" class="texto"/>
+                </div>
+
+                <div>
+                    <input type="date" placeholder="Fecha de Cumpleaños" id="fecha" class="texto"/>
+                </div>
+
+                <div>
+                    <input type="text" placeholder="Imagen Elegida" id="imagen" class="texto"/>
+                </div>
+            </section>
+
+            <div id="galeria">
+                <div class="img">
+                    <figure>
+                        <img src="imgs/realidad.jpg" alt="realidad" data-name="realidad">
+                        <p>Realidad</p>
+                    </figure>
+                    <figure>
+                        <img src="imgs/alma.jpg" alt="alma" data-name="alma">
+                        <p>Alma</p>
+                    </figure>
+                    <figure>
+                        <img src="imgs/mente.jpg" alt="mente" data-name="mente">
+                        <p>Mente</p>
+                    </figure>
+                </div>
+                <div class="img">
+                    <figure>
+                        <img src="imgs/tiempo.jpg" alt="tiempo" data-name="tiempo">
+                        <p>Tiempo</p>
+                    </figure>
+                    <figure>
+                        <img src="imgs/espacio.jpg" alt="espacio" data-name="espacio">
+                        <p>Espacio</p>
+                    </figure>
+                    <figure>
+                        <img src="imgs/poder.jpg" alt="poder" data-name="poder">
+                        <p>Poder</p>
+                    </figure>
+                </div>
+            </div>
+
+            <div id="btn">
+                <input type="button" value="Guardar" id="btnGuardar">
+            </div>
+        </form>
+    </div> 
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Multas</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div id="contenedor">
+        <nav>
+            <H1>Formulario de Multas</H1>
+        </nav>
+        <form id="cargar">
+            <label>Nombre:</label>
+            <input type="text" placeholder="Pepe Pepito" name="nombre" id="nombre"><br>
+            <label>Número de Documento:</label>
+            <input type="text" placeholder="33.333.333" name="dni" id="dni"><br>
+            <label>Email:</label>
+            <input type="text" placeholder="pepe@pepito.com" name="email" id="email"><br>
+            <label>Tipo de Vehículo</label>
+            <select name="vehiculo" id="vehiculo">
+                <option value="1">Auto</option>
+                <option value="2">Camión</option>
+            </select>
+            <input type="text" placeholder="ejes" name="ejes" id="ejes"> <br>
+            <label>Modelo del Auto:</label>
+            <input type="text" placeholder="Fitito" name="modelo" id="modelo"><br>
+            <label>Número de Patente:</label>
+            <input type="text" placeholder="ABC 123" name="patente" id="patente"><br>
+            <button id="confirmar">Confirmar</button>
+        </form>
+    </div>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/auto.js"></script>
+    <script type="text/javascript" src="js/camion.js"></script>
+</body>
+</html>
