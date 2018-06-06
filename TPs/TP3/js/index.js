@@ -1,9 +1,3 @@
-var primero= null;
-var numClick;
-var puntos= 0;
-var clicked= [];
-var matcheado= 0;
-
 const fichasArray= [
     {'name':'barco', 'img': 'imgs/barco.jpg'},
     {'name':'cama', 'img': 'imgs/cama.jpg'},
@@ -18,6 +12,14 @@ const fichasArray= [
     {'name':'tijera', 'img': 'imgs/tijera.jpg'},
     {'name':'trono', 'img': 'imgs/trono.jpg'}
 ];
+var primero= null;
+var numClick;
+var puntos= 0;
+var clicked= [];
+var matcheado= 0;
+var jsonRanking= {};
+var jugadores= [];
+var datosGuardados= localStorage.getItem("jugadores");
 
 function comenzar(){
     $('#comenzar').on('click', function(){
@@ -62,7 +64,7 @@ function comenzar(){
     });
             
 };
-comenzar();
+
 
 function mezclar(){
     for(i=0; i<fichasArray.length; i++){
@@ -89,17 +91,17 @@ function girar(primero, segundo){
 
 $('.back').on('click', function(){
     $(this).children().first().toggleClass('visible invisible');
-    console.log($(this).children().first());
+    //console.log($(this).children().first());
     
     if(primero == null){
         primero= $(this).children().first();
-        console.log('primer click');
+        //console.log('primer click');
         clicked.push(primero);
         primero.parent().addClass('noPointer');
         
     }else{
         var segundo= $(this).children().first();
-        console.log('segundo click');
+        //console.log('segundo click');
         clicked.push(segundo);
         segundo.parent().addClass('noPointer');
         
@@ -108,11 +110,11 @@ $('.back').on('click', function(){
                 && primero.parent().attr('id') != segundo.parent().attr('id')){
                 $(primero).effect( "bounce", { times: 3 }, "slow" );
                 $(segundo).effect( "bounce", { times: 3 }, "slow" );                    
-                console.log("match");
+                //console.log("match");
                 clicked.splice(0,1);
                 clicked=[];
                 matcheado++;
-                console.log('matcheado: '+matcheado);                    
+                //console.log('matcheado: '+matcheado);                    
                 
                 primero= null;
                 segundo= null;
@@ -136,7 +138,7 @@ $('.back').on('click', function(){
                 clicked=[];
                 setTimeout(girar, 1200, primero, segundo);
                 numClick--;
-                console.log('movimientos: '+numClick);
+                //console.log('movimientos: '+numClick);
             }
             primero= null;
             segundo= null;
@@ -149,14 +151,57 @@ $('.back').on('click', function(){
 
 function resultado(){
     if(matcheado == 6){
-        setTimeout(function(){alert('Bien ahí, ganaste!');}, 1500);
-        setTimeout(function(){location.reload();}, 3000);
-    }
+        guardarDatos();
+        $('#ganador').removeClass('invisible');
+        $('#ganador').dialog();
+        $('.ranking').on('click', function(){
+            $('#rankingDiv').removeClass('invisible');
+            $('#rankingDiv').dialog();
+        });
+        $('.nuevoJuego').on('click', function(){
+            location.reload();
+        });
+    }; 
+
     if(numClick == 0){
-        setTimeout(function(){alert('JAJA, perdiste.');}, 1500);
-        setTimeout(function(){location.reload();}, 3000);
-    }
+        $('#perdedor').removeClass('invisible');
+        $('#perdedor').dialog();
+        $('.ranking').on('click', function(){
+            $('#rankingDiv').removeClass('invisible');
+            $('#rankingDiv').dialog();
+            });
+        $('.nuevoJuego').on('click', function(){
+            location.reload();
+        });
+    
+    };
 };
 
+function guardarDatos(){
+    if(datosGuardados == null){
+        jugadores= [];
+    }else{
+        jugadores= JSON.parse(datosGuardados).jugadores;
+    };
+    console.log(datosGuardados);
+    
+    let datos= {
+        nombre: $('#nombre').val(),
+        nivel: $('#nivelSpan').html(),
+        movimientos: $('#numClickSpan').html(),
+        puntos: $('#puntosSpan').html()
+    };
+    console.log(datos);
+    jugadores.push(datos);
+    console.log(jugadores);
+    jsonRanking= {
+        'jugadores': jugadores,
+        'infoJugadores': jugadores.length,
+    };
+    let data= JSON.stringify(jsonRanking);
+    localStorage.setItem("jugadores", data);
+}
+//localStorage.clear();
+comenzar();
 mezclar();
 asignarFichas();

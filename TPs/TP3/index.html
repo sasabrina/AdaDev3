@@ -25,6 +25,7 @@
             <button id="jugarbtn">Jugar</button>
         </div>
     </div>
+
     <div id="contenedor">
         <section id="izquierda">
             <h1>Memotest Holístico</h1>
@@ -42,6 +43,7 @@
                 <h3>Puntaje: <span id="puntosSpan"></span></h3>
             </div>
         </section>
+
         <section id="derecha" class="noPointer">
             <div class="tablero">
                     <div id="ficha0" class="back"></div>
@@ -63,6 +65,22 @@
             </div>
         </section>
     </div>
+
+    <div title="¡Ganaste!" id="ganador" class="invisible">
+        <div>
+            <button class="ranking">Ranking</button>
+            <button class="nuevoJuego">Nuevo juego</button>
+        </div>
+     </div>
+
+     <div title="Perdiste :(" id="perdedor" class="invisible">
+        <div>
+            <button class="ranking">Ranking</button>
+            <button class="nuevoJuego">Nuevo juego</button>
+        </div>
+     </div>
+
+     <div title="Ranking" id="rankingDiv" class="invisible"></h1></div>
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
