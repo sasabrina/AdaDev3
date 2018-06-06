@@ -15,6 +15,7 @@ const fichasArray= [
 var primero= null;
 var numClick;
 var puntos= 0;
+var puntaje;
 var clicked= [];
 var matcheado= 0;
 var jsonRanking= {};
@@ -151,12 +152,14 @@ $('.back').on('click', function(){
 
 function resultado(){
     if(matcheado == 6){
+        puntaje= puntos;
         guardarDatos();
         $('#ganador').removeClass('invisible');
         $('#ganador').dialog();
-        $('.ranking').on('click', function(){
+        $('.rankingbtn').on('click', function(){
             $('#rankingDiv').removeClass('invisible');
             $('#rankingDiv').dialog();
+            cargarRanking();
         });
         $('.nuevoJuego').on('click', function(){
             location.reload();
@@ -166,10 +169,11 @@ function resultado(){
     if(numClick == 0){
         $('#perdedor').removeClass('invisible');
         $('#perdedor').dialog();
-        $('.ranking').on('click', function(){
+        $('.rankingbtn').on('click', function(){
             $('#rankingDiv').removeClass('invisible');
             $('#rankingDiv').dialog();
-            });
+            cargarRanking();
+        });
         $('.nuevoJuego').on('click', function(){
             location.reload();
         });
@@ -183,25 +187,39 @@ function guardarDatos(){
     }else{
         jugadores= JSON.parse(datosGuardados).jugadores;
     };
-    console.log(datosGuardados);
-    
+    //console.log(datosGuardados);
     let datos= {
         nombre: $('#nombre').val(),
-        nivel: $('#nivelSpan').html(),
+        nivel: $('#nivelSpan').val(),
         movimientos: $('#numClickSpan').html(),
-        puntos: $('#puntosSpan').html()
+        puntos: puntaje,
     };
-    console.log(datos);
+    //console.log(datos);
     jugadores.push(datos);
     console.log(jugadores);
+    let jSort= jugadores.sort(function(a,b){
+    	return b.puntos - a.puntos;
+    });
     jsonRanking= {
-        'jugadores': jugadores,
-        'infoJugadores': jugadores.length,
+        'jugadores': jSort,
+        'total': jSort.length,
     };
     let data= JSON.stringify(jsonRanking);
     localStorage.setItem("jugadores", data);
-}
+};
 //localStorage.clear();
+
+function cargarRanking(){
+    let datosParse= localStorage.getItem("jugadores");
+    let jSon= JSON.parse(datosParse);
+    let jugador= jSon.jugadores;
+
+    $.each(jugador, function(index, elem){
+        let liRanking= `<li><p>${elem.nombre}, ${elem.puntos}</p></li>`
+        $('#rankingDiv').append(liRanking);
+    });
+}
+
 comenzar();
 mezclar();
 asignarFichas();

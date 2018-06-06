@@ -2,12 +2,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f1ece9;
+    
     font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: #f1ece9;
+}
+#popup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.ui-widget-content .ui-widget-header .ui-dialog .ui-dialog-content{
+    background-color: #fff;
+}
+.ui-dialog-titlebar-close {
+    display: none; 
 }
 #contenedor{
     width: 90%;
-    margin: auto;
+    margin: 2% auto;
     display: flex;
 }
 #izquierda{
@@ -19,11 +35,23 @@ h1{
     font-family: 'Noto Serif', serif;
 }
 #instrucciones{
+    width: 300px;
     margin-top: 20px;
+}
+#comenzar{
+    margin: 10px 0;
 }
 h2{
     font-size: 30px;
     color: #2b060d
+}
+.botones{
+    width: 100px;
+    height: 25px;
+    padding: 3px;
+    background-color: #b51f21;
+    color: #fff;
+    text-align: center;
 }
 #izquierda{
     width: 50%; 
