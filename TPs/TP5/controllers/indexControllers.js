@@ -2,14 +2,17 @@ const dataController= require('../controllers/dataController');
 const filterController= require('../controllers/filterController');
 const self= {};
 
-const genres= ["All","Action", "Adventure", "Animation", "Comedy", "Crime", "Drama", "Music", "Romance", "Science Fiction", "Thriller", "Mystery", "Fantasy"];
-
 self.inicio= function(req, res, next) {
     res.render('index', { title: 'CineFan' });
   }
 
 self.peliculas= function(req, res, next){
-    res.render('movies', {title: 'CineFan', movie: dataController.movies, genre: genres});
+    res.render('movies', {
+        title: 'CineFan', 
+        movie: dataController.movies, 
+        genre: dataController.genres,
+        rate: dataController.rates
+    });
 }
 
 self.movieid= function(req, res, next){
@@ -19,12 +22,13 @@ self.movieid= function(req, res, next){
 
 self.filter= function(req, res, next){
     let generos= req.body.generos;
-    var genreFilter= filterController.filtro(generos);
+    let rates= req.body.rates;
+    var filter= filterController.filtro(generos, rates);
 
-    if(genreFilter === 0){
+    if(filter === 0){
         res.render('error');
     }else{
-        res.render('filtered', {title: generos, genreFilter: genreFilter});
+        res.render('filtered', {title: 'Genre '+generos+' rated '+ rates, filter: filter});
     }
 }
 
