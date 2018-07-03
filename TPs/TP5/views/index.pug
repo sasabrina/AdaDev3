@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  #contenedor
+    h1= title
+    form
+      input#search(type='search' name='q' placeholder='search title or director')
+      button#btnSearch Buscar
+    form(method='get' action='/movies')
+      input#explorar(type='submit' value="Explorar")

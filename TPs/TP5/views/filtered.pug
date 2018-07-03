@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    #genreCont
+        h1=title
+        #genreMain
+            for genero in genreFilter
+                figure.moviefig
+                    img(src="../images/"+genero.poster)
+                    figcaption.movietitle= genero.movietitle
+                    a(href='../movies/'+genero.id) Ver mas

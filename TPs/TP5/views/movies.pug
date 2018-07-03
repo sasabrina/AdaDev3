@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    h1=title
+    #container
+        #breadcrumb
+        #izquierda
+            form(method="post" action="movies/filtered")
+                label Genres: 
+                select(name="generos" id="generos")
+                    for genero in genre
+                        option(value=genero) #{genero}
+                input#filtrar(type='submit' value='Filter')
+        #derecha
+            for pelicula in movie
+                figure.moviefig
+                    img(src="../images/"+pelicula.poster)
+                    figcaption.movietitle= pelicula.movietitle
+                    a(href='movies/'+pelicula.id) Ver mas

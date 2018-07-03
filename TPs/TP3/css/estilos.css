@@ -2,13 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
     font-family: Arial, Helvetica, sans-serif;
 }
 body{
     background-color: #f1ece9;
 }
-#popup{
+#popup .ui-dialog{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,12 +24,14 @@ body{
     width: 90%;
     margin: 2% auto;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 #izquierda{
-    width: 45%;
+    width: 50%;
 }
 h1{
-    font-size: 55px;
+    font-size: 50px;
     color: #b51f21;
     font-family: 'Noto Serif', serif;
 }
@@ -53,9 +54,8 @@ h2{
     color: #fff;
     text-align: center;
 }
-#izquierda{
-    width: 50%; 
-    height: 100%;;
+#derecha{
+    width: 50%;
 }
 .tablero{
     display: flex;
@@ -76,4 +76,16 @@ h2{
 }
 .noPointer{
     pointer-events: none;
+}
+#perdedor #ganador .ui-dialog{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li{
+    list-style: none;
+}
+#ranking p{
+    font-weight: bold;
+    margin-left: 20px;
 }
