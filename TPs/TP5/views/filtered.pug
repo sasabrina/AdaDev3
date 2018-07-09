@@ -1,11 +1,11 @@
 extends layout
 
 block content
-    #genreCont
+    #filterCont
         h1=title
         #filterMain
             for filtro in filter
                 figure.moviefig
                     img(src="../images/"+filtro.poster)
                     figcaption.movietitle= filtro.movietitle
-                    a(href='../movies/'+filtro.id) Ver mas
+                    a(href='../movies/m/'+filtro.id) View more

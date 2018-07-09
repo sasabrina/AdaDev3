@@ -1,11 +1,20 @@
 var express = require('express');
 var router = express.Router();
-var indexControllers = require('../controllers/indexControllers');
+var data = require('../controllers/dataController'); 
+var movies = require('../controllers/moviesController');
+var search = require('../controllers/searchController');
+var filter = require('../controllers/filterController');
 
 /* GET home page. */
-router.get('/', indexControllers.inicio);
-router.get('/movies', indexControllers.peliculas);
-router.get('/movies/:id', indexControllers.movieid);
-router.post('/movies/filtered', indexControllers.filter);
+router.get('/', function(req, res, next) {
+  res.render('index', { 
+    title: 'CineFan', 
+    movie: data.movies});
+});
+
+router.get('/movies/:page', movies.movies);
+router.get('/movies/m/:id', movies.movieid);
+router.get('/search/:search', search.search);
+router.post('/movies/filtered', filter.filter);
 
 module.exports = router;

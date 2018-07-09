@@ -3,8 +3,8 @@ extends layout
 block content
   #contenedor
     h1= title
-    form
-      input#search(type='search' name='q' placeholder='search title or director')
-      button#btnSearch Buscar
-    form(method='get' action='/movies')
-      input#explorar(type='submit' value="Explorar")
+      form
+        input#search(type='text' name='Search' placeholder='Search title or director')
+        button#btnSearch Search
+      form(method='get' action='/movies/1')
+        input#explorar(type='submit' value="Explore")
