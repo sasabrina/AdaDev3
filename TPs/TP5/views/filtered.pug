@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    #filterCont
+        h1=title
+        #filterMain
+            for filtro in filter
+                figure.moviefig
+                    img(src="../images/"+filtro.poster)
+                    figcaption.movietitle= filtro.movietitle
+                    a(href='../movies/m/'+filtro.id) View more

@@ -1,0 +1,29 @@
+extends layout
+
+block content
+    h1=title
+    #container
+        #breadcrumb
+        #main
+            #izquierda
+                form(method="post" action="/movies/filtered")
+                    label.movieslbl Genres: 
+                    select(name="generos" id="generos")
+                        for genero in genre
+                            option(value=genero) #{genero}
+                    label.movieslbl Rate: 
+                    select(name="rates" id="rates")
+                        for rates in rate
+                            option(value=rates) #{rates}
+                    input#filtrar(type='submit' value='Filter')
+            #derecha
+                for pelicula in movies
+                    figure.moviefig
+                        img(src="../images/"+pelicula.poster)
+                        figcaption.movietitle= pelicula.movietitle
+                        a(href='/movies/m/'+pelicula.id) View More
+    #pagination
+        - var p = 1
+            while p <= totalPages
+                a.page-link(href='/movies/'+p)
+                    span=p++

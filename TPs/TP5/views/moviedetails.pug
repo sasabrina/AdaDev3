@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    #detailsCont
+        h1=title
+        #detailsMain
+            div.detailsDiv
+                img(src="/images/"+movie.poster)
+            div.detailsDiv
+                h2=movie.movietitle
+                p#director Director: #{movie.director}
+                p#synopsis= movie.synopsis
+                div#detailsbtn
+                    #watchedBtn
+                        p 
+                            i.fas.fa-eye
+                    #likeBtn
+                        p
+                            i.far.fa-heart
