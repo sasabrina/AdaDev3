@@ -21,12 +21,20 @@ block content
                         for rates in rate
                             option(value=rates) #{rates}
                     input#filtrar(type='submit' value='Filter')
+                form(method='get' action='/movies/v/watched')
+                    input#watched(type='submit' value="Movies watched")
             #derecha
                 for pelicula in movies
                     figure.moviefig
                         img(src="../images/"+pelicula.poster)
                         figcaption.movietitle= pelicula.movietitle
-                        a.fakebtn(href='/movies/m/'+pelicula.id) View More
+                        #moviesbtn
+                            a(href='/movies/m/'+pelicula.id)
+                                button.view-more View More
+                            if(pelicula.watched)
+                                i(class="fa fa-eye watched" data-id=pelicula.poster)
+                            else
+                                i(class="fa fa-eye" data-id=pelicula.poster)
         #pagination
             #pages
                 - var p = 1

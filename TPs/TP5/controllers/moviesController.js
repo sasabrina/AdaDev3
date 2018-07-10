@@ -38,5 +38,4 @@ self.movieid= function(req, res, next){
     res.render('moviedetails', { title: 'CineFan', movie: movie});  
 }
 
-
 module.exports= self;

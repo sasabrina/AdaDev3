@@ -12,16 +12,10 @@ block content
             h1=title
     #detailsCont
         #detailsMain
-            div.detailsDiv
+            div#detailsDiv
                 img(src="/images/"+movie.poster)
-            div.detailsDiv
+            div#detailsinfo
                 h2=movie.movietitle
                 p#director Director: #{movie.director}
+                p#release Release year: #{movie.release}
                 p#synopsis= movie.synopsis
-                div#detailsbtn
-                    #watchedBtn
-                        p 
-                            i.fas.fa-eye
-                    #likeBtn
-                        p
-                            i.far.fa-heart
