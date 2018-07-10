@@ -1,8 +1,16 @@
 extends layout
 
 block content
+    nav
+        #breadcrumb
+            a(href='/') HOME
+            span >
+            a(href='/movies/1') ALL MOVIES
+            span >
+            p=movie.movietitle
+        #title
+            h1=title
     #detailsCont
-        h1=title
         #detailsMain
             div.detailsDiv
                 img(src="/images/"+movie.poster)

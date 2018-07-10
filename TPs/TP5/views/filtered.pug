@@ -1,11 +1,19 @@
 extends layout
 
 block content
+    nav
+        #breadcrumb
+            a(href='/') HOME
+            span >
+            a(href='/movies/1') ALL MOVIES
+            span >
+            p=title2
+        #title
+            h1=title
     #filterCont
-        h1=title
         #filterMain
             for filtro in filter
                 figure.moviefig
                     img(src="../images/"+filtro.poster)
                     figcaption.movietitle= filtro.movietitle
-                    a(href='../movies/m/'+filtro.id) View more
+                    a.fakebtn(href='../movies/m/'+filtro.id) View more

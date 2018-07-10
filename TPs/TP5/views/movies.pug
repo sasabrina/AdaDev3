@@ -1,9 +1,14 @@
 extends layout
 
 block content
-    h1=title
     #container
-        #breadcrumb
+        nav
+            #breadcrumb
+                a(href='/') HOME
+                span >
+                p ALL MOVIES
+            #title
+                h1=title
         #main
             #izquierda
                 form(method="post" action="/movies/filtered")
@@ -21,9 +26,10 @@ block content
                     figure.moviefig
                         img(src="../images/"+pelicula.poster)
                         figcaption.movietitle= pelicula.movietitle
-                        a(href='/movies/m/'+pelicula.id) View More
-    #pagination
-        - var p = 1
-            while p <= totalPages
-                a.page-link(href='/movies/'+p)
-                    span=p++
+                        a.fakebtn(href='/movies/m/'+pelicula.id) View More
+        #pagination
+            #pages
+                - var p = 1
+                    while p <= totalPages
+                        a.page-link.fakebtn(href='/movies/'+p)
+                            span=p++

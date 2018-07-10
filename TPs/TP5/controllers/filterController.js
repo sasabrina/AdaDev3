@@ -27,7 +27,8 @@ self.filter= function(req, res, next){
         res.render('error');
     }else{
         res.render('filtered', {
-            title: 'Genre '+generos+' rated '+ rates, 
+            title: 'CineFan',
+            title2: 'Genre '+generos+' rated '+ rates, 
             filter: filter});
     }
 }

@@ -3,6 +3,7 @@ const self= {};
 
 function match(words, movie){
     const movieString = JSON.stringify(movie).toLowerCase();
+    console.log(movieString)
     return words.every(word => movieString.indexOf(word) >= 0 );
 }
 
@@ -13,7 +14,8 @@ self.search= function(req, res, next){
 
     if(dataMovie.length){
         res.render('search',{
-            title: 'Matches found for '+inputSearch, 
+            title: 'CineFan',
+            title2: 'Matches found for '+inputSearch, 
             dataMovie: dataMovie});
     }else{
         res.render('error', {

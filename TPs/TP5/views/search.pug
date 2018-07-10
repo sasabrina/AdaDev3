@@ -1,10 +1,16 @@
 extends layout
 
 block content
-    h1=title
+    nav
+        #breadcrumb
+            a(href='/') HOME
+            span >
+            p SEARCH
+        #title
+            h1=title
     #searchMain
-        for search in dataMovie
+        for buscar in dataMovie
             figure.moviefig
-                img(src="../images/"+search.poster)
-                figcaption.movietitle= search.movietitle
-                a(href='../movies/m/'+search.id) View More
+                img(src="../images/"+buscar.poster)
+                figcaption.movietitle= buscar.movietitle
+                a.fakebtn(href='../movies/m/'+buscar.id) View More

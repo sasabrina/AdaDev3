@@ -1,23 +1,66 @@
-body {
+*{
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #4a5968;
+}
+nav{
+  widows: 100%;
+  height: 50px;
+  background-color: black;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+#breadcrumb{
+  width: 30%;
+  margin-left: 10%;
+}
+#breadcrumb a{
+  text-decoration: none;
+  font-weight: bolder;
+  color: #ffffff;
+  margin-right: 3px;
+}
+#breadcrumb span{
+  font-weight: bold;
+  color: #9696cb;
+  margin-right: 3px;
+}
+#breadcrumb p{
+  display: inline;
+}
+#title{
+  width: 70%;
+}
+#title h1{
+  font-size: 40px;
+  color: #fff;
+  float: right;
+  margin-right: 20%;
 }
 /******* INDEX PUG *******/
 #contenedor{
-  width: 40%;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-h1{
+#contenedor nav{
+  margin-bottom: 15px;
+}
+#contenedor h1{
   font-size: 40px;
   color: #fff;
   text-align: center;
+}
+#contenedor form{
+  width: 30%;
+  margin: auto;
 }
 #search, select{
   width: 100%;
@@ -38,19 +81,17 @@ h1{
   border: none;
 }
 /******* MOVIES PUG *******/
-#container{
-  width: 90%;
-  margin: auto;
-  display: flex;
-}
 #main{
+  width: 80%;
+  margin: 10px auto;
   display: flex;
 }
 #izquierda{
-  width: 30%;
+  width: 40%;
   padding: 20px 0;
 }
 #izquierda form{
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
@@ -60,18 +101,23 @@ h1{
   font-size: 18px;
   margin: 5px 0;
 }
-#derecha, #filterMain, .searchMain{
-  width: 70%;
+#derecha, .searchMain{
+  width: 60%;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
+}
+.moviefig{
+  margin: 10px;
 }
 .moviefig img{
   width: 150px;
+  height: 212px;
 }
 figcaption{
   margin-bottom: 10px;
 }
-a{
+.fakebtn{
   text-decoration: none;
   color: black;
   width: 100%;
@@ -86,16 +132,20 @@ a{
   color: #fff;
 }
 #pagination{
-  width: 50%;
-  margin: auto;
+  width: 100%;
+  height: 35px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .page-link{
-  margin: 2px;
+  margin: 0 2px;
 }
 /******* DETAILS PUG *******/
 #detailsCont{
   width: 60%;
-  margin: auto;
+  margin: 5% auto;
 }
 #detailsMain{
   display: flex;
@@ -113,8 +163,17 @@ h2, p{
 #director{
   font-weight: bold;
 }
+#detailsbtn{
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+#detailsbtn p{
+  font-size: 25px;
+}
 /******* FILTERED PUG *******/
 #filterMain{
   width: 95%;
   margin: auto;
+  display: flex;
 }
