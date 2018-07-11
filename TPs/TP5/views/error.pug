@@ -1,6 +1,14 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  #contError
+    nav
+      #breadcrumb
+          a(href='/') HOME
+          span >
+          a(href='/movies/1') ALL MOVIES
+      #title
+          h1 CineFan
+  #mainError
+    div
+      h1 Oops! Something went wrong.

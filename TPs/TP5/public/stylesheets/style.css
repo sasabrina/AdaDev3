@@ -81,6 +81,11 @@ nav{
   border: none;
 }
 /******* MOVIES PUG *******/
+#container{
+  width: 100%;
+  display: flex;
+  flex-direction: column; 
+}
 #main{
   width: 80%;
   margin: 10px auto;
@@ -145,7 +150,7 @@ figcaption{
 .watched{
   color: #9696cb;
 }
-#pagination{
+footer{
   width: 100%;
   height: 35px;
   background-color: black;
@@ -207,4 +212,10 @@ h2, p{
 /******* WATCHED PUG *******/
 #contWatched h2{
   margin: 10px 15px
+}
+/******* ERROR PUG *******/
+#mainError{
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
 }
