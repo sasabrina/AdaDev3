@@ -13,12 +13,13 @@ block content
     #contWatched
         h2=title2
         #mainWatched
-            if(vistas.length>0)
-                each watched in vistas
-                    figure.moviefig
-                        img(src="/images/"+watched)
-                        figcaption.movietitle=movietitle
-                        a(href='/movies/m/'+movieid)
-                            button.view-more View More
-            else
-                h3 There are no movies watched yet.
+            #watcheddiv
+                if(vistas.length>0)
+                    each watched in vistas
+                        figure.moviefig
+                            img(src="/images/"+watched)
+                            figcaption.movietitle=movietitle
+                            a(href='/movies/m/'+movieid)
+                                button.view-more View More
+                else
+                    h3 There are no movies watched yet.

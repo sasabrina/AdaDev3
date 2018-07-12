@@ -13,7 +13,8 @@ block content
     #detailsCont
         #detailsMain
             div#detailsDiv
-                img(src="/images/"+movie.poster)
+                figure
+                    img(src="/images/"+movie.poster)
             div#detailsinfo
                 h2=movie.movietitle
                 p#director Director: #{movie.director}

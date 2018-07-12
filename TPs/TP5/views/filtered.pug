@@ -16,4 +16,5 @@ block content
                 figure.moviefig
                     img(src="../images/"+filtro.poster)
                     figcaption.movietitle= filtro.movietitle
-                    a.fakebtn(href='../movies/m/'+filtro.id) View more
+                    a(href='../movies/m/'+filtro.id)
+                        button.view-more View More

@@ -4,8 +4,9 @@ block content
   #contenedor
       nav
         h1= title
-      form
-        input#search(type='text' name='Search' placeholder='Search title or director')
-        button#btnSearch Search
-      form(method='get' action='/movies/1')
-        input#explorar(type='submit' value="Explore")
+      #mainidex
+        form
+          input#search(type='text' name='Search' placeholder='Search title or director')
+          button#btnSearch Search
+        form(method='get' action='/movies/1')
+          input#explorar(type='submit' value="Explore")
