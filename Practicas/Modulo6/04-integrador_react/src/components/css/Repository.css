@@ -1,0 +1,9 @@
+#repoCont{
+    margin: 150px auto 0;
+    width: 90%;
+}
+#divrepo{
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+}

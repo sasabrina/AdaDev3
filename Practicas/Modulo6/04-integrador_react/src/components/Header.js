@@ -21,9 +21,11 @@ class Header extends Component{
             <img src={profilepic} alt='profile image' id='profilepic'/>
           </figure>
           <div id='profiledata'>
-            <h2>I'M <span>SABRINA ALVAREZ</span></h2>
-            <h4>Front-End Dev & Coffee addict</h4>
-            <hr/>
+            <div id='titulo'>
+              <h2>I'M <span>SABRINA ALVAREZ</span></h2>
+              <h4>Front-End Dev & Coffee addict</h4>
+              <hr/>
+            </div>
             <table>
               <tr>
                 <th>Age</th>
