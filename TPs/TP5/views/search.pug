@@ -13,4 +13,5 @@ block content
             figure.moviefig
                 img(src="../images/"+buscar.poster)
                 figcaption.movietitle= buscar.movietitle
-                a.fakebtn(href='../movies/m/'+buscar.id) View More
+                a(href='/movies/m/'+buscar.id)
+                    button.view-more View More
