@@ -1,0 +1,12 @@
+.breadcrumb{
+    background-color: #eeeeee;
+    padding: 16px 0px;
+    margin: 0;
+    display: flex;
+}
+
+ul li{
+    list-style: none;
+    display: inline;
+    color: #999999;
+}

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import '../css/Itemid.css'
+import Breadcrumb from './Breadcrumb'
 
 class Itemid extends Component{
     constructor(props){
         super(props);
-        this.state = {item: {}}
+        this.state = {item: null}
     }
 
     componentDidMount(){
@@ -12,40 +14,51 @@ class Itemid extends Component{
 
         fetch(`/items/${id}`)
         .then(res => res.json())
-        .then(resp => {this.setState({item:resp.items})
+        .then(resp => {this.setState({
+            item:resp.items,
+            categories:resp.categories})
             })
         .catch(err => console.log('error', err))
     }
 
     render() {
         var i= this.state.item;
+        if(this.state.item == null){
+            return(
+                <p>Cargando...</p>
+            )
+        }else{
+            
         return(
             <section>
-                {i &&
                 <div>
-                    <div className='itemIdpic'>
-                        <img src={i.picture}/>
+                    <Breadcrumb categorias={this.state.categories}/>
+                </div>
+                <div className='Itemid-main'>
+                    <div className='Itemid-pic'>
+                        <img src={i.picture} alt={i.picture}/>
                     </div>
-                    <div className='itemIddata'>
+                    <div className='Itemid-data'>
                         <div>
-                            <p>{i.condition}</p>
-                            <h3>{i.title}</h3>
-                            {i.price && 
-                                <h1>$ {i.price.amount}</h1>}
+                            <p className='condition'>{i.condition} - {i.sold_quantity} vendidos</p>
+                            <p className='item-title'>{i.title}</p>
+                            {i.price && <p className='item-price'><span>{i.price.currency}</span>{i.price.amount}</p>}
                         </div>
-                        <div>
-                            <a href='#'>
-                                <button>Comprar</button>
+                        <div className='comprar'>
+                            <a href='http://mercadolibre.com.ar'>
+                                <button className='comprarbtn'>Comprar</button>
                             </a>
-                        </div>
-                        <div>
-                            <p>{i.description}</p>
                         </div>
                     </div>
                 </div>
-                }
+                <div className='Itemid-description'>
+                    <p className='description-title'>Descripción del producto</p>
+                    <p className='description-text'>{i.description}</p>
+                </div>
+            
             </section>
         )
+    }
     }
 }
 

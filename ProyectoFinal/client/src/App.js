@@ -16,12 +16,14 @@ class App extends Component {
         <header className="App-header">
           <div><Search/></div>
         </header>
-        <Router>
-          <Switch>
-          <Route exact path="/items" component={Items}/>
-          <Route path="/items/:id" component={Itemid}/>
-          </Switch>
-        </Router>
+        <div className="App-main">
+          <Router>
+            <Switch>
+            <Route exact path="/items" component={Items}/>
+            <Route path="/items/:id" component={Itemid}/>
+            </Switch>
+          </Router>
+        </div>
       </div>
     );
   }
